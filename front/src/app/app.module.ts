@@ -30,6 +30,11 @@ import { NavComponent } from './components/template/nav/nav.component';
 
 import { HomeComponent } from './components/views/home/home.component';
 
+import { LancheComponent } from './components/views/lanche/lanche.component';
+import { LancheCreateComponent } from './components/views/lanche/lanche-create/lanche-create.component';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,6 +44,10 @@ import { HomeComponent } from './components/views/home/home.component';
     NavComponent,
 
     HomeComponent,
+
+    LancheComponent,
+    LancheCreateComponent
+
   ],
   imports: [
     BrowserModule,
