@@ -60,4 +60,5 @@ public class lancheService {
         findById(id); // Verifica se o lanche existe
         repository.deleteById(id);
     }
+
 }
