@@ -15,6 +15,6 @@ public class Lanches implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    protected Integer id;
-    protected String nome;
+    private Integer id;
+    private String nome;
 }
