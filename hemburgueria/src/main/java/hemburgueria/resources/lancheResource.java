@@ -41,5 +41,22 @@ public class lancheResource {
                         .toList());
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<lancheDTO> findById(@PathVariable Integer id) {
+        return ResponseEntity.ok().body(mapper.map(service.findById(id), lancheDTO.class));
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<lancheDTO> update(@PathVariable Integer id,
+                                           @RequestBody lancheDTO dto) {
+        return ResponseEntity.ok().body(mapper.map(service.update(id, dto), lancheDTO.class));
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> delete(@PathVariable Integer id) {
+        service.delete(id);
+        return ResponseEntity.noContent().build();
+    }
+
 
 }
