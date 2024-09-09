@@ -63,4 +63,8 @@ public class lancheResource {
 =======
 
 }
+<<<<<<< HEAD
 >>>>>>> back
+=======
+
+>>>>>>> front
