@@ -1,0 +1,39 @@
+<mat-sidenav-container class="conteiner">
+  <mat-sidenav mode="side" opened>
+    <mat-nav-list>
+      <a routerLink="" mat-list-item>
+        <i class="material-icons">home</i>
+        home
+      </a>
+    </mat-nav-list>
+
+    <mat-nav-list>
+      <a  routerLink="/carros" mat-list-item>
+        <i mat-button class="material-icons">directions_car</i>
+        Carro
+      </a>
+    </mat-nav-list>
+
+    <mat-nav-list>
+      <a  routerLink="/marcas" mat-list-item>
+        <i mat-button class="material-icons">search</i>
+        Marca
+      </a>
+    </mat-nav-list>
+
+    <mat-nav-list>
+      <a  routerLink="/proprietarios" mat-list-item>
+        <i mat-button class="material-icons">account_circle</i>
+        Proprietario
+      </a>
+    </mat-nav-list>
+
+
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>
+
