@@ -32,6 +32,7 @@ import { HomeComponent } from './components/views/home/home.component';
 
 import { LancheComponent } from './components/views/lanche/lanche.component';
 import { LancheCreateComponent } from './components/views/lanche/lanche-create/lanche-create.component';
+
 import { BebidaComponent } from './components/views/bebida/bebida.component';
 import { BebidaCreateComponent } from './components/views/bebida/bebida-create/bebida-create.component';
 
@@ -49,8 +50,9 @@ import { BebidaCreateComponent } from './components/views/bebida/bebida-create/b
 
     LancheComponent,
     LancheCreateComponent,
+
     BebidaComponent,
-    BebidaCreateComponent
+    BebidaCreateComponent,
 
   ],
   imports: [
