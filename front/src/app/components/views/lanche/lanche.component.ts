@@ -1,6 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, RouterStateSnapshot } from '@angular/router';
-import { LancheModule } from './lanche.module';
+import { Lanche } from './lanche.module';
+import { LancheService } from './lanche.service';
 
 @Component({
   selector: 'app-lanche',
@@ -9,25 +10,38 @@ import { LancheModule } from './lanche.module';
 })
 export class LancheComponent implements OnInit  {
 
-  displayedColumns = ['id', 'nome'];
+  displayedColumns = ['id', 'nome', 'actions'];
 
-  lanche: LancheModule [] = [];
+  lanche: Lanche [] = [];
+
+
 
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-
+    private lancheService: LancheService,
   ) {}
 
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    this.findAll();
   }
 
 
+  findAll(): void {
+    this.lancheService.findAll().subscribe((lanche) => {
+      this.lanche = lanche;
+    });
+  }
 
 
   delete(): void {
 
+    const id = this.route.snapshot.paramMap.get('id');
+
+    this.lancheService.delete(id as string).subscribe((lanche) => {
+      lanche = lanche;
+      this.router.navigate(['lanches']);
+    });
 
 
   }

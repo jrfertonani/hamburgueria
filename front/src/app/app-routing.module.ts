@@ -9,7 +9,9 @@ const routes: Routes = [
 
   {path: '', component: HomeComponent},
   {path:'lanches', component:LancheComponent },
-  {path: 'lanches/create', component: LancheCreateComponent}
+  {path: 'lanches/create', component: LancheCreateComponent},
+  {path: 'lanches/update/:id', component: LancheCreateComponent},
+  {path: 'lanches/delete/:id' , component: LancheComponent}
 
 
 ];

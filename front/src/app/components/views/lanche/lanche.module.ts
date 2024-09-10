@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-export interface LancheModule {
+export interface Lanche {
   id?: number,
   nome: string
 }
