@@ -58,17 +58,4 @@ public class lancheResource {
         return ResponseEntity.noContent().build();
     }
 
-<<<<<<< HEAD
 }
-=======
-
-}
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> back
-=======
-
->>>>>>> front
-=======
-
->>>>>>> front
