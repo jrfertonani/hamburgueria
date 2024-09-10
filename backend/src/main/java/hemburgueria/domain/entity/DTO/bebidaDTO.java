@@ -10,7 +10,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter     @Setter
-public class bebidasDTO implements Serializable {
+public class bebidaDTO implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private Integer id;
