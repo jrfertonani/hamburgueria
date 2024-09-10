@@ -2,23 +2,24 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { FormControl, Validators } from '@angular/forms';
-import { Lanche } from '../lanche.module';
-import { LancheService } from '../lanche.service';
+import { BebidaService } from '../bebida.service';
+import { Bebida } from '../bebida.module';
+
 
 @Component({
-  selector: 'app-lanche-create',
-  templateUrl: './lanche-create.component.html',
-  styleUrl: './lanche-create.component.scss'
+  selector: 'app-bebida-create',
+  templateUrl: './bebida-create.component.html',
+  styleUrl: './bebida-create.component.scss'
 })
-export class LancheCreateComponent implements OnInit {
+export class BebidaCreateComponent implements OnInit {
 
   constructor(
-    private lancheService: LancheService,
+    private bebidaService: BebidaService,
     private router: Router,
     private route: ActivatedRoute
   ) {}
 
-  lanche: Lanche = {
+  bebida: Bebida = {
     id: 0,
     nome: ''
   };
@@ -27,8 +28,8 @@ export class LancheCreateComponent implements OnInit {
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
-      this.lancheService.findById(id).subscribe((lanche) => {
-        this.lanche = lanche;
+      this.bebidaService.findById(id).subscribe((bebida) => {
+        this.bebida = bebida;
       });
     }
 
@@ -37,8 +38,8 @@ export class LancheCreateComponent implements OnInit {
 
   save(): void {
     // Validação dos campos obrigatórios
-    if (!this.lanche.nome.trim()) {
-      this.lancheService.mensagem('O nome do lanche não pode estar vazio!');
+    if (!this.bebida.nome.trim()) {
+      this.bebidaService.mensagem('O nome do lanche não pode estar vazio!');
       return;
     }
 /*
@@ -58,24 +59,24 @@ export class LancheCreateComponent implements OnInit {
     }
 */
     // Enviar o carro para o serviço
-    this.lancheService.create(this.lanche).subscribe(
+    this.bebidaService.create(this.bebida).subscribe(
       (resposta) => {
-        this.lancheService.mensagem('Lanche criado com sucesso!');
-        this.router.navigate(['lanches']);
+        this.bebidaService.mensagem('Bebida criado com sucesso!');
+        this.router.navigate(['bebidas']);
       },
       (err) => {
-        console.error('Erro ao criar lanche:', err);
+        console.error('Erro ao criar bebida:', err);
         const errorMessage = err.error?.message || 'Erro ao criar lanche!';
-        this.lancheService.mensagem(errorMessage);
+        this.bebidaService.mensagem(errorMessage);
       }
     );
   }
 
   update(): void {
-    this.lancheService.update(this.lanche).subscribe(
+    this.bebidaService.update(this.bebida).subscribe(
       (Response)=> {
-        this.lancheService.mensagem('Lanches changed successfully!');
-        this.router.navigate(['lanches']);
+        this.bebidaService.mensagem('Bebida changed successfully!');
+        this.router.navigate(['bebidas']);
 
       },
       (err)=> {
@@ -85,10 +86,8 @@ export class LancheCreateComponent implements OnInit {
   }
 
 
-
-
   cancel(): void {
-    this.router.navigate(['lanches']);
+    this.router.navigate(['bebidas']);
   }
 
 
