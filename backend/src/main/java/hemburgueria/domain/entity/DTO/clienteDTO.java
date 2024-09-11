@@ -3,15 +3,11 @@ package hemburgueria.domain.entity.DTO;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.io.Serializable;
-@NoArgsConstructor
-@AllArgsConstructor
-@Getter     @Setter
+
+@Data
 public class clienteDTO implements Serializable {
     private static final long serialVersionUID = 1L;
 
