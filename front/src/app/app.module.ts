@@ -36,6 +36,9 @@ import { LancheCreateComponent } from './components/views/lanche/lanche-create/l
 import { BebidaComponent } from './components/views/bebida/bebida.component';
 import { BebidaCreateComponent } from './components/views/bebida/bebida-create/bebida-create.component';
 
+import { ClienteComponent } from './components/views/cliente/cliente.component';
+import { ClienteCreateComponent } from './components/views/cliente/cliente-create/cliente-create.component';
+
 
 
 @NgModule({
@@ -53,6 +56,9 @@ import { BebidaCreateComponent } from './components/views/bebida/bebida-create/b
 
     BebidaComponent,
     BebidaCreateComponent,
+
+    ClienteComponent,
+    ClienteCreateComponent,
 
   ],
   imports: [
