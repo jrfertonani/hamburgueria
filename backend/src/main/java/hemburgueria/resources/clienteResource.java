@@ -1,6 +1,6 @@
 package hemburgueria.resources;
 
-import hemburgueria.domain.entity.Cliente;
+import hemburgueria.domain.entity.Clientes;
 import hemburgueria.domain.entity.DTO.clienteDTO;
 import hemburgueria.services.clienteService;
 import jakarta.validation.Valid;
@@ -46,15 +46,15 @@ public class clienteResource {
 
     @GetMapping("/{id}")
     private ResponseEntity<clienteDTO> findById(@PathVariable Integer id) {
-        return ResponseEntity.ok().body(
-                mapper.map(service.findById(id), clienteDTO.class));
-    }
+        Clientes obj = service.findById(id);
+        return ResponseEntity.ok().body(new clienteDTO(obj));
+}
 
     @PutMapping("/{id}")
     private ResponseEntity<clienteDTO> update(@PathVariable Integer id,
                                            @RequestBody clienteDTO dto) {
         dto.setId(id);
-        Cliente obj = service.update(id, dto);
+        Clientes obj = service.update(id, dto);
         return ResponseEntity.ok().body(dto);
     }
 
