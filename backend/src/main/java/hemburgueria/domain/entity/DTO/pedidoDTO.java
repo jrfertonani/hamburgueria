@@ -1,9 +1,11 @@
 package hemburgueria.domain.entity.DTO;
 
+import hemburgueria.domain.entity.Lanches;
 import hemburgueria.domain.entity.Pedidos;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.util.List;
 
 
 @Data
@@ -13,19 +15,29 @@ public class pedidoDTO implements Serializable {
     private Integer id;
     private String nome;
 
-    private String nomeCliente;
-    private String nomeLanche;
+    private Integer clientes;
+    private List<Lanches> lanches;
+
 
 
     public pedidoDTO() {
         super();
     }
 
-    public pedidoDTO(Pedidos obj) {
-        super();
-        this.id = obj.getId();
-        this.nome = obj.getNome();
-        this.nomeCliente = obj.getClientes().getNome();
-        this.nomeLanche = obj.getNome();
+    public pedidoDTO(Integer id, String nome, Integer clientes, List<Lanches> lanches) {
+        this.id = id;
+        this.nome = nome;
+        this.clientes = clientes;
+        this.lanches = lanches;
     }
+
+    public pedidoDTO(Pedidos entity) {
+        super();
+        this.id = entity.getId();
+        this.nome = entity.getNome();
+        this.clientes = entity.getClientes();
+        this.lanches = entity.getLanches();
+    }
+
+
 }

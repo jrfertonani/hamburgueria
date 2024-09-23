@@ -1,13 +1,12 @@
 package hemburgueria.domain.entity;
 
+import hemburgueria.domain.entity.DTO.pedidoDTO;
 import jakarta.persistence.*;
 import lombok.Data;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 @Data
 @Entity
@@ -27,11 +26,19 @@ public class Pedidos implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "clientes_id")
-    private Clientes clientes;
+    private Integer clientes;
 
 
     @OneToMany(mappedBy = "pedidos")
     private List<Lanches> lanches = new ArrayList<>();
+
+    public Pedidos(pedidoDTO entity) {
+        super();
+        this.id = entity.getId();
+        this.nome = entity.getNome();
+        this.clientes = entity.getClientes();
+        this.lanches = entity.getLanches();
+    }
 
 }
 
