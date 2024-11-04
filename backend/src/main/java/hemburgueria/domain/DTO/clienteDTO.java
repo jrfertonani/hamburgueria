@@ -1,4 +1,4 @@
-package hemburgueria.domain.entity.DTO;
+package hemburgueria.domain.DTO;
 
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
