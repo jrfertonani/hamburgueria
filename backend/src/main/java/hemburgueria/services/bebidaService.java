@@ -1,7 +1,7 @@
 package hemburgueria.services;
 
 import hemburgueria.domain.entity.Bebidas;
-import hemburgueria.domain.entity.DTO.bebidaDTO;
+import hemburgueria.domain.DTO.bebidaDTO;
 import hemburgueria.repositories.bebidaRepository;
 import hemburgueria.services.exceptions.ObjectNotFoundException;
 import org.modelmapper.ModelMapper;
