@@ -1,4 +1,4 @@
-package hemburgueria.domain.entity.DTO;
+package hemburgueria.domain.DTO;
 
 import lombok.*;
 
@@ -10,6 +10,7 @@ public class bebidaDTO implements Serializable {
 
     private Integer id;
     private String nome;
+
 
 
 }
