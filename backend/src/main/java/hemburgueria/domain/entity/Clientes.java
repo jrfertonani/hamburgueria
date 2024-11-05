@@ -9,11 +9,17 @@ import java.util.List;
 
 @Data
 @Entity
-public class Clientes extends Pessoas implements Serializable {
+public class Clientes implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @OneToMany(mappedBy = "clientes")
-    private List<Pedidos> pedidos;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    protected Integer id;
+    protected String nome;
+
+    @OneToMany(mappedBy = "clientes", fetch = FetchType.LAZY)
+    protected List<Pedidos> pedidos = new ArrayList<>();
+
 
 
 }
