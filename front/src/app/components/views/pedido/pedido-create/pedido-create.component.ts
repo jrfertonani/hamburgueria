@@ -11,15 +11,26 @@ import { Pedido } from '../pedido.module';
 export class PedidoCreateComponent implements OnInit {
 
   constructor(
-    private pedidosService: PedidoService,
+    private pedidoService: PedidoService,
     private router: Router,
     private route: ActivatedRoute
   ) {}
 
-  pedido: Pedido[] =[];
+  pedido: Pedido = {
+    id: 0,
+    lanche: '',
+    bebida: '',
+    cliente:'',
+  };
 
 
   ngOnInit(): void {
+    const id = this.route.snapshot.paramMap.get('id');
+    if (id) {
+      this.pedidoService.findById(id).subscribe((pedido) => {
+        this.pedido = pedido;
+      });
+    }
 
   }
 
@@ -30,6 +41,8 @@ export class PedidoCreateComponent implements OnInit {
   cancel(){
     this.router.navigate(['/pedidos'])
   }
+
+  savePedido(){}
 
 
 

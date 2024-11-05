@@ -2,87 +2,22 @@
 
 <form >
   <mat-form-field class="form">
-    <mat-label>Nome</mat-label>
+    <mat-label>Clientes</mat-label>
     <input
       matInput
       type="text"
       name="nome"
-      placeholder="Ex.Dog"
-      [(ngModel)]="pedido"
+      placeholder="Ex.João"
+      [(ngModel)]="pedido.cliente"
     />
   </mat-form-field>
 
 
 
-  <!--
-
-  <div class="marca">
-    <mat-form-field class="full-width" appearance="outline">
-      <mat-label>Selecione uma Marca</mat-label>
-      <mat-select
-        [(ngModel)]="carro.marca"
-        name="marcaId"
-        required>
-        <mat-option *ngFor="let mar of marca" [value]="mar">
-          {{ mar.nome }}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
-  </div>
-
-Campo para Criar Nova Marca
-  <mat-form-field class="form">
-    <mat-label>Nova Marca</mat-label>
-    <input
-      matInput
-      type="text"
-      name="novaMarca"
-      placeholder="Ex. NOVA"
-      [(ngModel)]="novaMarca.nome"
-    />
-  </mat-form-field>
-  -->
-
-
-  <!-- Campo para criar proprietario
-
-  <div class="proprietario">
-    <mat-form-field class="full-width" appearance="outline">
-      <mat-label>Selecione um proprietario</mat-label>
-      <mat-select
-        [(ngModel)]="carro.proprietario"
-        name="proprietarioId"
-        required>
-        <mat-option *ngFor="let pro of proprietario" [value]="pro">
-          {{ pro.nome }}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
-  </div>
-
-  <mat-form-field class="form">
-    <mat-label>Novo proprietario</mat-label>
-    <input
-      matInput
-      type="text"
-      name="novoProprietario"
-      placeholder="Ex. Proprietario"
-      [(ngModel)]="novoProprietario.nome"
-    />
-  </mat-form-field>
-
--->
 
 
   <div class="buttons">
-     <!--
-    <button (click)="saveMarca()" class="mat-elevation-z8" mat-button>Adicionar marca</button>
-
-    <button (click)="saveProprietario()" class="mat-elevation-z8" mat-button>Adicionar proprietario</button>
--->
-    <button (click)="save()" class="mat-elevation-z8" mat-button>Save</button>
-    <button (click)="cancel()" class="mat-elevation-z8" mat-button>
-      Cancel
-    </button>
+    <button type="submit" class="mat-elevation-z8" mat-button color="primary">Salvar Pedido</button>
+    <button type="button" class="mat-elevation-z8" mat-button (click)="cancel()">Cancelar</button>
   </div>
 </form>
