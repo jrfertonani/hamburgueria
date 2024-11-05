@@ -3,6 +3,7 @@ import { Pedido } from './pedido.module';
 import { PedidoService } from './pedido.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Lanche } from '../lanche/lanche.module';
+import { P } from '@angular/cdk/keycodes';
 
 @Component({
   selector: 'app-pedido',
@@ -39,7 +40,15 @@ export class PedidoComponent implements OnInit  {
  }
 
 
- delete(){}
+ delete(): void {
 
+  const id = this.route.snapshot.paramMap.get('id');
+
+  this.pedidoService.delete(id as string).subscribe((pedido) => {
+    pedido = pedido;
+    this.router.navigate(['pedidos']);
+  });
+
+}
 
 }
