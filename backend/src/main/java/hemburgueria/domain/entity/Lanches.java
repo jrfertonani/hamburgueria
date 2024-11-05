@@ -16,6 +16,4 @@ public class Lanches implements Serializable {
     private Integer id;
     private String nome;
 
-
-
 }
