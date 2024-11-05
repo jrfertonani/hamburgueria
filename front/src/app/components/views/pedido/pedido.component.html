@@ -1,26 +1,36 @@
 <div class="content">
   <div class="title">
-    <h3>Bebidas</h3>
+    <h3>Pedidos</h3>
   </div>
 
   <div class="tablemaster">
     <button
       class="mat-elevation-z8"
-      (click)="navegarParaBebidaCreate()"
+      (click)="navegarParaPedidoCreate()"
       mat-button
     > Cadastrar
     </button>
 
     <div class="mat-elevation-z8 content-table">
-      <table class="table" mat-table [dataSource]="bebida">
+      <table class="table" mat-table [dataSource]="pedido">
         <ng-container matColumnDef="id">
           <th mat-header-cell *matHeaderCellDef>id</th>
           <td mat-cell *matCellDef="let row">{{ row.id }}</td>
         </ng-container>
 
-        <ng-container matColumnDef="nome">
-          <th mat-header-cell *matHeaderCellDef>Nome</th>
-          <td mat-cell *matCellDef="let row">{{ row.nome }}</td>
+        <ng-container matColumnDef="lanche">
+          <th mat-header-cell *matHeaderCellDef>Lanche</th>
+          <td mat-cell *matCellDef="let row">{{ row.lanche.nome }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="bebida">
+          <th mat-header-cell *matHeaderCellDef>Bebida</th>
+          <td mat-cell *matCellDef="let row">{{ row.bebida.nome }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="cliente">
+          <th mat-header-cell *matHeaderCellDef>Cliente</th>
+          <td mat-cell *matCellDef="let row">{{ row.cliente.nome }}</td>
         </ng-container>
 
 

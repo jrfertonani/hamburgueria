@@ -32,8 +32,15 @@ import { HomeComponent } from './components/views/home/home.component';
 
 import { LancheComponent } from './components/views/lanche/lanche.component';
 import { LancheCreateComponent } from './components/views/lanche/lanche-create/lanche-create.component';
+
 import { BebidaComponent } from './components/views/bebida/bebida.component';
 import { BebidaCreateComponent } from './components/views/bebida/bebida-create/bebida-create.component';
+
+import { ClienteComponent } from './components/views/cliente/cliente.component';
+import { ClienteCreateComponent } from './components/views/cliente/cliente-create/cliente-create.component';
+import { PedidoComponent } from './components/views/pedido/pedido.component';
+import { PedidoCreateComponent } from './components/views/pedido/pedido-create/pedido-create.component';
+
 
 
 
@@ -49,8 +56,14 @@ import { BebidaCreateComponent } from './components/views/bebida/bebida-create/b
 
     LancheComponent,
     LancheCreateComponent,
+
     BebidaComponent,
-    BebidaCreateComponent
+    BebidaCreateComponent,
+
+    ClienteComponent,
+    ClienteCreateComponent,
+    PedidoComponent,
+    PedidoCreateComponent,
 
   ],
   imports: [

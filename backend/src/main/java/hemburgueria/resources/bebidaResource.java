@@ -1,7 +1,7 @@
 package hemburgueria.resources;
 
 import hemburgueria.domain.entity.Bebidas;
-import hemburgueria.domain.entity.DTO.bebidaDTO;
+import hemburgueria.domain.DTO.bebidaDTO;
 import hemburgueria.services.bebidaService;
 import jakarta.validation.Valid;
 import org.modelmapper.ModelMapper;
