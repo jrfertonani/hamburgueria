@@ -29,8 +29,8 @@ public class Pedidos implements Serializable {
             inverseJoinColumns = @JoinColumn(name = "bebidas"))
     private Set<Bebidas> bebidas = new HashSet<>();
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "clientes")
+    @ManyToOne
+    @JoinColumn(name = "cliente_id")
     private Clientes clientes;
 
 

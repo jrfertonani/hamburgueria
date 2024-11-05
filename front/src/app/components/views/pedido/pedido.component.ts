@@ -10,6 +10,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class PedidoComponent implements OnInit  {
 
+  displayedColumns = ['id', 'lanche', 'bebida', 'cliente', 'actions'];
+
 
   constructor(
     private router: Router,
@@ -22,5 +24,15 @@ export class PedidoComponent implements OnInit  {
  ngOnInit() {
 
  }
+
+
+
+ navegarParaPedidoCreate(){
+  this.router.navigate(['/pedidos/create'])
+ }
+
+
+ delete(){}
+
 
 }
