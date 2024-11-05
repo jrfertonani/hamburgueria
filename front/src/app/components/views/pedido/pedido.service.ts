@@ -30,4 +30,11 @@ export class PedidoService {
 
 
 
+  delete(id: string): Observable<Pedido>{
+    const url = `${this.URL}/${id}`;
+    return this.http.delete<Pedido>(url)
+
+  }
+
+
 }
