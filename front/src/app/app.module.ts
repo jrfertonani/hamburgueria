@@ -38,6 +38,9 @@ import { BebidaCreateComponent } from './components/views/bebida/bebida-create/b
 
 import { ClienteComponent } from './components/views/cliente/cliente.component';
 import { ClienteCreateComponent } from './components/views/cliente/cliente-create/cliente-create.component';
+import { PedidoComponent } from './components/views/pedido/pedido.component';
+import { PedidoCreateComponent } from './components/views/pedido/pedido-create/pedido-create.component';
+
 
 
 
@@ -59,6 +62,8 @@ import { ClienteCreateComponent } from './components/views/cliente/cliente-creat
 
     ClienteComponent,
     ClienteCreateComponent,
+    PedidoComponent,
+    PedidoCreateComponent,
 
   ],
   imports: [
