@@ -22,4 +22,12 @@ export class PedidoService {
     return this.http.get<Pedido[]>(this.URL);
   }
 
+  findById(id: string):Observable<Pedido>{
+    const url = `${this.URL}/${id}`;
+    return this.http.get<Pedido>(url);
+  }
+
+
+
+
 }
