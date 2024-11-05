@@ -9,6 +9,8 @@ import { BebidaComponent } from './components/views/bebida/bebida.component';
 import { BebidaCreateComponent } from './components/views/bebida/bebida-create/bebida-create.component';
 import { ClienteComponent } from './components/views/cliente/cliente.component';
 import { ClienteCreateComponent } from './components/views/cliente/cliente-create/cliente-create.component';
+import { PedidoComponent } from './components/views/pedido/pedido.component';
+import { PedidoCreateComponent } from './components/views/pedido/pedido-create/pedido-create.component';
 
 const routes: Routes = [
 
@@ -27,6 +29,11 @@ const routes: Routes = [
   {path: 'clientes/create', component: ClienteCreateComponent},
   {path: 'clientes/update/:id', component: ClienteCreateComponent},
   {path: 'clientes/delete/:id', component: ClienteComponent},
+
+  {path: 'pedidos', component: PedidoComponent},
+  {path: 'pedidos/create', component: PedidoCreateComponent},
+  {path: 'pedidos/update/:id', component: PedidoCreateComponent},
+  {path: 'pedidos/delete/:id', component: PedidoComponent},
 
 
 
