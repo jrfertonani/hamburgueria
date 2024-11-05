@@ -13,5 +13,5 @@ public class pedidoDTO implements Serializable {
 
     private Set<lancheDTO> lanches;
     private Set<bebidaDTO> bebidas;
-    private clienteDTO cliente;
+    private clienteDTO clientes;
 }
