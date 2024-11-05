@@ -1,6 +1,6 @@
 package hemburgueria.services;
 
-import hemburgueria.domain.entity.DTO.lancheDTO;
+import hemburgueria.domain.DTO.lancheDTO;
 import hemburgueria.domain.entity.Lanches;
 import hemburgueria.repositories.lancheRepository;
 import hemburgueria.services.exceptions.ObjectNotFoundException;

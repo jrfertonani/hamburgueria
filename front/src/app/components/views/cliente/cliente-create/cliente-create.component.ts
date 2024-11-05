@@ -2,23 +2,23 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { FormControl, Validators } from '@angular/forms';
-import { Lanche } from '../lanche.module';
-import { LancheService } from '../lanche.service';
+import { ClienteService } from '../cliente.service';
+import { Cliente } from '../cliente.module';
 
 @Component({
-  selector: 'app-lanche-create',
-  templateUrl: './lanche-create.component.html',
-  styleUrl: './lanche-create.component.scss'
+  selector: 'app-cliente-create',
+  templateUrl: './cliente-create.component.html',
+  styleUrl: './cliente-create.component.scss'
 })
-export class LancheCreateComponent implements OnInit {
+export class ClienteCreateComponent implements OnInit {
 
   constructor(
-    private lancheService: LancheService,
+    private clienteService: ClienteService,
     private router: Router,
     private route: ActivatedRoute
   ) {}
 
-  lanche: Lanche = {
+  cliente: Cliente = {
     id: 0,
     nome: ''
   };
@@ -27,8 +27,8 @@ export class LancheCreateComponent implements OnInit {
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
-      this.lancheService.findById(id).subscribe((lanche) => {
-        this.lanche = lanche;
+      this.clienteService.findById(id).subscribe((cliente) => {
+        this.cliente = cliente;
       });
     }
 
@@ -37,8 +37,8 @@ export class LancheCreateComponent implements OnInit {
 
   save(): void {
     // Validação dos campos obrigatórios
-    if (!this.lanche.nome.trim()) {
-      this.lancheService.mensagem('O nome do lanche não pode estar vazio!');
+    if (!this.cliente.nome.trim()) {
+      this.clienteService.mensagem('O nome do cliente não pode estar vazio!');
       return;
     }
 /*
@@ -58,24 +58,24 @@ export class LancheCreateComponent implements OnInit {
     }
 */
     // Enviar o carro para o serviço
-    this.lancheService.create(this.lanche).subscribe(
+    this.clienteService.create(this.cliente).subscribe(
       (resposta) => {
-        this.lancheService.mensagem('Lanche criado com sucesso!');
-        this.router.navigate(['lanches']);
+        this.clienteService.mensagem('Cliente criado com sucesso!');
+        this.router.navigate(['clientes']);
       },
       (err) => {
-        console.error('Erro ao criar lanche:', err);
-        const errorMessage = err.error?.message || 'Erro ao criar lanche!';
-        this.lancheService.mensagem(errorMessage);
+        console.error('Erro ao criar cliente:', err);
+        const errorMessage = err.error?.message || 'Erro ao criar cliente!';
+        this.clienteService.mensagem(errorMessage);
       }
     );
   }
 
   update(): void {
-    this.lancheService.update(this.lanche).subscribe(
+    this.clienteService.update(this.cliente).subscribe(
       (Response)=> {
-        this.lancheService.mensagem('Lanches changed successfully!');
-        this.router.navigate(['lanches']);
+        this.clienteService.mensagem('Cliente changed successfully!');
+        this.router.navigate(['clientes']);
 
       },
       (err)=> {
@@ -88,7 +88,7 @@ export class LancheCreateComponent implements OnInit {
 
 
   cancel(): void {
-    this.router.navigate(['lanches']);
+    this.router.navigate(['clientes']);
   }
 
 
