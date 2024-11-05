@@ -1,7 +1,7 @@
 package hemburgueria.resources;
 
-import hemburgueria.domain.entity.Cliente;
-import hemburgueria.domain.entity.DTO.clienteDTO;
+import hemburgueria.domain.entity.Clientes;
+import hemburgueria.domain.DTO.clienteDTO;
 import hemburgueria.services.clienteService;
 import jakarta.validation.Valid;
 import org.modelmapper.ModelMapper;
@@ -54,7 +54,7 @@ public class clienteResource {
     private ResponseEntity<clienteDTO> update(@PathVariable Integer id,
                                            @RequestBody clienteDTO dto) {
         dto.setId(id);
-        Cliente obj = service.update(id, dto);
+        Clientes obj = service.update(id, dto);
         return ResponseEntity.ok().body(dto);
     }
 
