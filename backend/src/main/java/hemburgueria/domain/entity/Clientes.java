@@ -13,7 +13,7 @@ public class Clientes extends Pessoas implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @OneToMany(mappedBy = "clientes")
-    private List<Pedidos> pedidos = new ArrayList<>();
+    private List<Pedidos> pedidos;
 
 
 }
