@@ -1,6 +1,6 @@
 package hemburgueria.resources;
 
-import hemburgueria.domain.entity.DTO.lancheDTO;
+import hemburgueria.domain.DTO.lancheDTO;
 import hemburgueria.services.lancheService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
