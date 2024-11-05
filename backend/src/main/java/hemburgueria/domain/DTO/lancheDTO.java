@@ -1,4 +1,4 @@
-package hemburgueria.domain.entity.DTO;
+package hemburgueria.domain.DTO;
 
 import lombok.Data;
 
@@ -12,6 +12,7 @@ public class lancheDTO implements Serializable {
 
     private Integer id;
     private String nome;
+
 
 
 }
