@@ -4,7 +4,7 @@ import { Lanche } from "../lanche/lanche.module";
 
 export interface Pedido {
   id?: number;
-  lanche: Lanche[];
-  bebida: Bebida;
-  cliente: Cliente;
+  lanche: string;
+  bebida: string;
+  cliente: string;
 }
