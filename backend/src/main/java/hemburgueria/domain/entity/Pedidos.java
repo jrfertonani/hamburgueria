@@ -29,7 +29,7 @@ public class Pedidos implements Serializable {
             inverseJoinColumns = @JoinColumn(name = "bebidas"))
     private Set<Bebidas> bebidas = new HashSet<>();
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "clientes")
     private Clientes clientes;
 
