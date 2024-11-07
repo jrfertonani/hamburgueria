@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Pedido } from './pedido.module';
 import { PedidoService } from './pedido.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Lanche } from '../lanche/lanche.module';
-import { P } from '@angular/cdk/keycodes';
 
 @Component({
   selector: 'app-pedido',
@@ -33,6 +31,9 @@ export class PedidoComponent implements OnInit  {
   this.router.navigate(['/pedidos/create'])
  }
 
+
+
+
  findALL(){
   this.pedidoService.findAll().subscribe(pedido => {
     this.pedido = pedido;
@@ -50,5 +51,6 @@ export class PedidoComponent implements OnInit  {
   });
 
 }
+
 
 }
