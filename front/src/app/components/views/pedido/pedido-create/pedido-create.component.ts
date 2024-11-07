@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PedidoService } from '../pedido.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Pedido } from '../pedido.module';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-pedido-create',
@@ -10,29 +11,30 @@ import { Pedido } from '../pedido.module';
 })
 export class PedidoCreateComponent implements OnInit {
 
+
+
+
   constructor(
     private pedidoService: PedidoService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
   ) {}
 
-  pedido: Pedido = {
-    id: 0,
-    lanche: '',
-    bebida: '',
-    cliente:'',
-  };
+  pedido: Pedido[]=[];
+
 
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
       this.pedidoService.findById(id).subscribe((pedido) => {
-        this.pedido = pedido;
+        pedido = pedido;
       });
     }
 
   }
+
+
 
 
   save(){}
@@ -43,7 +45,6 @@ export class PedidoCreateComponent implements OnInit {
   }
 
   savePedido(){}
-
 
 
 }
