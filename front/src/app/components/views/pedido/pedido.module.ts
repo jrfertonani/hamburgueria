@@ -6,5 +6,5 @@ export interface Pedido {
   id?: number;
   lanche: string;
   bebida: string;
-  cliente: string;
+  cliente: Cliente;
 }
