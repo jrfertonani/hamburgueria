@@ -11,6 +11,7 @@
     > Cadastrar
     </button>
 
+
     <div class="mat-elevation-z8 content-table">
       <table class="table" mat-table [dataSource]="pedido">
         <ng-container matColumnDef="id">
@@ -55,10 +56,14 @@
           </td>
         </ng-container>
 
+
+
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
       </table>
     </div>
   </div>
 </div>
+
+
 
