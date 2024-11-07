@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+import { AsyncPipe, CommonModule } from '@angular/common';
 
 
 import {MatToolbarModule} from '@angular/material/toolbar';
@@ -17,8 +17,8 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatCardModule} from '@angular/material/card';
 import {MatTableModule} from '@angular/material/table';
 import {MatButtonModule} from '@angular/material/button';
-import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInput, MatInputModule} from '@angular/material/input';
+import {MatFormField, MatFormFieldModule} from '@angular/material/form-field';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSelectModule } from '@angular/material/select';
@@ -40,6 +40,7 @@ import { ClienteComponent } from './components/views/cliente/cliente.component';
 import { ClienteCreateComponent } from './components/views/cliente/cliente-create/cliente-create.component';
 import { PedidoComponent } from './components/views/pedido/pedido.component';
 import { PedidoCreateComponent } from './components/views/pedido/pedido-create/pedido-create.component';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 
 
@@ -88,6 +89,17 @@ import { PedidoCreateComponent } from './components/views/pedido/pedido-create/p
     CommonModule,
     FormsModule,
     BrowserModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatAutocompleteModule,
+    ReactiveFormsModule,
+    AsyncPipe,
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule,
+    ReactiveFormsModule,
+
   ],
   providers: [
     provideAnimationsAsync()
